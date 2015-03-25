@@ -33,29 +33,29 @@
         <div>
           <img class="comments-icon" src="../assets/SVGIcons/comment.svg"></img>{{comments.length}} Comments
         </div>
-        {{#each comments}}
-        <div class="comment">
-          <img class="comment-img" src={{img}}></img>
-          <div class="comment-body triangle-isosceles left">
-            <div class="comment-meta">
-              <a href="/{{name}}">{{name}}</a><span class="comment-stamp">{{stamp}}</span>
+        <div class="comments">
+          {{#each comments}}
+          <div class="comment">
+            <img class="comment-img" src={{img}}></img>
+            <div class="comment-body triangle-isosceles left">
+              <div class="comment-meta">
+                <a href="/{{name}}">{{name}}</a><span class="comment-stamp">{{stamp}}</span>
+              </div>
+              <div class="comment-content">
+                {{html}}
+              </div>
+              <img class="comment-reply" src="../assets/SVGIcons/reply.svg"></img>
+              <br><br>
             </div>
-            <div class="comment-content">
-              {{html}}
-            </div>
-            <img class="comment-reply" src="../assets/SVGIcons/reply.svg"></img>
-            <br><br>
           </div>
+          {{/each}}
         </div>
-        {{/each}}
-        <div class="comment">
           <!-- using project maker's avatar as placeholder as anonymous img was not given -->
           <img class="comment-img" src={{makerAvatar}}></img>
           <div class="comment-body triangle-isosceles left">
             <textarea class="comment-input"></textarea>
             <button class="comment-submit btn btn-sm btn-success">Submit</button>
           </div>
-        </div>
       </div>
     </div>
     <div class="col-md-4">

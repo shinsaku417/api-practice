@@ -5,7 +5,7 @@ var errorHandler = require('./helpers/errorHandler.js');
 module.exports = function (app, express) {
   app.use(express.static(__dirname + '/../client'));
 
-  app.engine('hbs', exphbs({defaultLayout: __dirname + '/views/layouts/project-main', extname: '.hbs'}));
+  app.engine('hbs', exphbs({defaultLayout: __dirname + '/views/layouts/project-layout', extname: '.hbs'}));
   app.set('view engine', 'hbs');
   app.set('views', __dirname + '/views');
 

@@ -58,7 +58,7 @@ module.exports = {
       var comment = data.comments[i];
       var name = comment.maker.nickname;
       var img = comment.maker.avatar.icon.url;
-      var stamp = moment(comment.maker.stamp).fromNow();
+      var stamp = moment(comment.stamp).fromNow();
       comments.push({
         html: comment.html,
         name: name,
