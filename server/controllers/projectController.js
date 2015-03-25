@@ -1,8 +1,11 @@
 var http = require('http');
+// use moment.js to deal with time
 var moment = require('moment');
 moment().format();
+// month map to convert numbers to months
 var monthMap = require('../helpers/monthMap.js');
 
+// function that makes api calls
 var getData = function(req, url, name, callback) {
   http.get(url, function(data) {
     var body = '';
@@ -17,6 +20,7 @@ var getData = function(req, url, name, callback) {
 };
 
 module.exports = {
+  // get project information e.g. project, favorites, comments, and achievements
   getProject: function(req, res, next) {
     req.data = {};
     var user = req.params.user;
@@ -37,6 +41,7 @@ module.exports = {
     });
   },
 
+  // organize the data and feed it to handlebars template to render
   renderProject: function(req, res) {
     var data = req.data;
 

@@ -1,3 +1,4 @@
+// maps numbers to months.
 module.exports = {
   1: "Jan",
   2: "Feb",

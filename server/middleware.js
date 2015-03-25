@@ -5,6 +5,7 @@ var errorHandler = require('./helpers/errorHandler.js');
 module.exports = function (app, express) {
   app.use(express.static(__dirname + '/../client'));
 
+  // use handlebar as view engine
   app.engine('hbs', exphbs({defaultLayout: __dirname + '/views/layouts/project-layout', extname: '.hbs'}));
   app.set('view engine', 'hbs');
   app.set('views', __dirname + '/views');
