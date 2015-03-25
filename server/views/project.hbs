@@ -5,19 +5,19 @@
       <img class="project-img img-responsive" src={{image}}></img>
     </div>
     <div class="col-md-4">
-      <div class="title">{{title}}</div>
-      <div class="date">{{date}}</div>
+      <div class="project-title">{{title}}</div>
+      <div class="project-date">{{date}}</div>
       <div class="achievements">
         {{#if achievements}}
           {{#each achievements}}
             <div class="achievement">
-              <img class="achievement-icon" src={{img}}></img><span class="achievement-name">{{title}}</span>
+              <img class="achievement-img" src={{img}}></img><span class="achievement-name">{{title}}</span>
             </div>
           {{/each}}
         {{/if}}
       </div>
-      <div class="maker">
-        <img src={{makerAvatar}}></img><a href="/{{makerName}}">{{makerName}}</a>
+      <div class="project-maker">
+        <img class="project-maker-img" src={{makerAvatar}}></img><a href="/{{makerName}}">{{makerName}}</a>
       </div>
     </div>
     <div class="col-md-1"></div>
@@ -29,14 +29,21 @@
     <div class="col-md-6">
       <div class="comments-container">
         <div>
-          <img class="comment-icon" src="../assets/SVGIcons/comment.svg"></img> {{numComments}} Comments
+          <img class="comment-icon" src="../assets/SVGIcons/comment.svg"></img>{{numComments}} Comments
         </div>
         {{#each comments}}
         <div class="comment">
-          <img class="img" src={{icon}}></img>
-          <span class="comment-body">
-            {{html}}
-          </span>
+          <img class="comment-img" src={{img}}></img>
+          <div class="comment-body triangle-isosceles left">
+            <div class="comment-meta">
+              <a href="/{{name}}">{{name}}</a>
+            </div>
+            <div class="comment-content">
+              {{html}}
+            </div>
+            <img class="comment-reply" src="../assets/SVGIcons/reply.svg"></img>
+            <br><br>
+          </div>
         </div>
         {{/each}}
       </div>

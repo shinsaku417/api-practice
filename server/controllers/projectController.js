@@ -55,11 +55,11 @@ module.exports = {
     for (var i = 0; i < data.comments.length; i++) {
       var comment = data.comments[i];
       var name = comment.maker.nickname;
-      var icon = comment.maker.avatar.icon.url;
+      var img = comment.maker.avatar.icon.url;
       comments.push({
         html: comment.html,
         name: name,
-        icon: icon
+        img: img
       });
     }
 
@@ -70,7 +70,7 @@ module.exports = {
       makerName: data.project.maker.nickname,
       makerAvatar: data.project.maker.avatar.icon.url,
       achievements: achievements,
-      numComments: data.comments.length,
+      numComments: comments.length,
       comments: comments
     };
     res.render('project', projectInfo);

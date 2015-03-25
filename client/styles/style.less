@@ -28,9 +28,19 @@
 @big: 24px;
 
 // margins
+@margin-xs: 5px;
 @margin-small: 15px;
 @margin-med: 20px;
 @margin-large: 30px;
+
+@font-face {
+  font-family: apexRoundedBook;
+  src: url(../assets/fonts/ApexRounded-Book.otf);
+}
+
+body {
+  font-family: apexRoundedBook;
+}
 
 .project-img {
   width: 480px;
@@ -38,18 +48,23 @@
   float: right;
 }
 
-.title {
+.project-title {
   font-size: @big;
   color: @black;
 }
 
-.date {
+.project-date {
   font-size: @small;
   color: @medGrey;
 }
 
-.maker {
+.project-maker {
+  font-size: @med;
   margin-top: @margin-small;
+}
+
+.project-maker-img {
+  margin-right: @margin-small;
 }
 
 .achievement {
@@ -61,7 +76,7 @@
   color: @darkGrey;
 }
 
-.achievement-icon {
+.achievement-img {
   margin-right: @margin-small;
   width: 40px;
   height: 40px;
@@ -69,7 +84,7 @@
 
 .social-container {
   margin-top: @margin-large;
-  background-color: @lightGrey;
+  background-color: @grey;
 }
 
 .comments-container {
@@ -80,12 +95,35 @@
 .comment-icon {
   width: 30px;
   height: 28px;
+  margin-right: @margin-small;
 }
 
 .comment {
   margin-top: @margin-small;
 }
 
+.comment-img {
+  width: 40px;
+  height: 40px;
+  float: left;
+}
+
 .comment-body {
+  min-height: 40px;
+  font-size: @med;
+}
+
+.comment-meta {
+  margin: @margin-xs 0px @margin-xs @margin-small;
+}
+
+.comment-content {
   margin-left: @margin-small;
+  margin-right: @margin-small;
+}
+
+.comment-reply {
+  width: 30px;
+  height: 28px;
+  float: right;
 }
