@@ -1,0 +1,50 @@
+<div class="project-container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+      <img class="project-img img-responsive" src={{image}}></img>
+    </div>
+    <div class="col-md-4">
+      <div class="title">{{title}}</div>
+      <div class="date">{{date}}</div>
+      <div class="achievements">
+        {{#if achievements}}
+          {{#each achievements}}
+            <div class="achievement">
+              <img class="achievement-icon" src={{img}}></img><span class="achievement-name">{{title}}</span>
+            </div>
+          {{/each}}
+        {{/if}}
+      </div>
+      <div class="maker">
+        <img src={{makerAvatar}}></img><a href="/{{makerName}}">{{makerName}}</a>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+<div class="social-container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+      <div class="comments-container">
+        <div>
+          <img class="comment-icon" src="../assets/SVGIcons/comment.svg"></img> {{numComments}} Comments
+        </div>
+        {{#each comments}}
+        <div class="comment">
+          <img class="img" src={{icon}}></img>
+          <span class="comment-body">
+            {{html}}
+          </span>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="favorites-container">
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
