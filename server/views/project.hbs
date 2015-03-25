@@ -23,13 +23,13 @@
     <div class="col-md-1"></div>
   </div>
 </div>
-<div class="social-container">
+<div class="social">
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-6">
       <div class="comments-container">
         <div>
-          <img class="comment-icon" src="../assets/SVGIcons/comment.svg"></img>{{numComments}} Comments
+          <img class="comments-icon" src="../assets/SVGIcons/comment.svg"></img>{{comments.length}} Comments
         </div>
         {{#each comments}}
         <div class="comment">
@@ -50,6 +50,17 @@
     </div>
     <div class="col-md-4">
       <div class="favorites-container">
+        <div>
+          <img class="favorites-icon" src="../assets/SVGIcons/favorite.svg"></img>{{favorites.length}} Favorites
+        </div>
+        <ul class="favorite list-inline">
+          {{#each favorites}}
+            <li>
+              <img class="favorite-img" src={{img}}></img>
+              <a href="/{{name}}">{{name}}</a>
+            </li>
+          {{/each}}
+        </ul>
       </div>
     </div>
     <div class="col-md-1"></div>

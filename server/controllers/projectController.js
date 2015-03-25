@@ -63,6 +63,17 @@ module.exports = {
       });
     }
 
+    var favorites = [];
+    for (var i = 0; i < data.favorites.length; i++) {
+      var favorite = data.favorites[i];
+      var name = favorite.nickname;
+      var img = favorite.avatar.icon.url;
+      favorites.push({
+        name: name,
+        img: img
+      });
+    }
+
     var projectInfo = {
       title: data.project.title,
       image: data.project.clips[0].assets.base.url,
@@ -70,8 +81,8 @@ module.exports = {
       makerName: data.project.maker.nickname,
       makerAvatar: data.project.maker.avatar.icon.url,
       achievements: achievements,
-      numComments: comments.length,
-      comments: comments
+      comments: comments,
+      favorites: favorites
     };
     res.render('project', projectInfo);
   }

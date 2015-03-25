@@ -42,6 +42,17 @@ body {
   font-family: apexRoundedBook;
 }
 
+.social-container {
+  margin-top: @margin-med;
+  margin-bottom: @margin-med;
+}
+
+.social-icon {
+  width: 30px;
+  height: 28px;
+  margin-right: @margin-xs;
+}
+
 .project-img {
   width: 480px;
   height: 320px;
@@ -82,20 +93,17 @@ body {
   height: 40px;
 }
 
-.social-container {
+.social {
   margin-top: @margin-large;
   background-color: @grey;
 }
 
 .comments-container {
-  margin-top: @margin-med;
-  margin-bottom: @margin-med;
+  .social-container
 }
 
-.comment-icon {
-  width: 30px;
-  height: 28px;
-  margin-right: @margin-small;
+.comments-icon {
+  .social-icon
 }
 
 .comment {
@@ -103,8 +111,8 @@ body {
 }
 
 .comment-img {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   float: left;
 }
 
@@ -126,4 +134,29 @@ body {
   width: 30px;
   height: 28px;
   float: right;
+}
+
+.favorites-container {
+  .social-container;
+}
+
+.favorites-icon {
+  .social-icon
+}
+
+.favorite {
+  list-style: none;
+  font-size: @med;
+  margin-top: @margin-small;
+}
+
+.favorite li {
+  display: inline-block;
+  margin-bottom: @margin-small;
+  float: left;
+  width: 45%;
+}
+
+.favorite-img {
+  margin-right: @margin-xs;
 }
