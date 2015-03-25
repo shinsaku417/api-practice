@@ -58,10 +58,7 @@ module.exports = {
       var comment = data.comments[i];
       var name = comment.maker.nickname;
       var img = comment.maker.avatar.icon.url;
-      var date = new Date(comment.maker.stamp);
-      var stamp = moment([date.getFullYear(), date.getMonth() - 1, date.getDay()]).fromNow();
-      // stamp will look like '2 years ago', so strip off to 1st three letters and remove white space
-      stamp = stamp.substring(0, 3).replace(' ', '');
+      var stamp = moment(comment.maker.stamp).fromNow();
       comments.push({
         html: comment.html,
         name: name,
