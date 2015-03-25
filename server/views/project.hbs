@@ -1,8 +1,10 @@
+<nav class="navbar navbar-inverse">
+</nav>
 <div class="project-container">
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-6">
-      <img class="project-img img-responsive" src={{image}}></img>
+      <img class="project-img img-responsive" src={{img}}></img>
     </div>
     <div class="col-md-4">
       <div class="project-title">{{title}}</div>
@@ -36,7 +38,7 @@
           <img class="comment-img" src={{img}}></img>
           <div class="comment-body triangle-isosceles left">
             <div class="comment-meta">
-              <a href="/{{name}}">{{name}}</a>
+              <a href="/{{name}}">{{name}}</a><span class="comment-stamp">{{stamp}}</span>
             </div>
             <div class="comment-content">
               {{html}}
@@ -46,6 +48,14 @@
           </div>
         </div>
         {{/each}}
+        <div class="comment">
+          <!-- using project maker's avatar as placeholder as anonymous img was not given -->
+          <img class="comment-img" src={{makerAvatar}}></img>
+          <div class="comment-body triangle-isosceles left">
+            <textarea class="comment-input"></textarea>
+            <button class="comment-submit btn btn-sm btn-success">Submit</button>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-md-4">

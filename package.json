@@ -9,6 +9,7 @@
   "author": "Shin Uesugi",
   "dependencies": {
     "express": "^4.12.3",
-    "express-handlebars": "^1.2.2"
+    "express-handlebars": "^1.2.2",
+    "moment": "^2.9.0"
   }
 }

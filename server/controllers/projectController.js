@@ -1,4 +1,6 @@
 var http = require('http');
+var moment = require('moment');
+moment().format();
 var monthMap = require('../helpers/monthMap.js');
 
 var getData = function(req, url, name, callback) {
@@ -56,10 +58,15 @@ module.exports = {
       var comment = data.comments[i];
       var name = comment.maker.nickname;
       var img = comment.maker.avatar.icon.url;
+      var date = new Date(comment.maker.stamp);
+      var stamp = moment([date.getFullYear(), date.getMonth() - 1, date.getDay()]).fromNow();
+      // stamp will look like '2 years ago', so strip off to 1st three letters and remove white space
+      stamp = stamp.substring(0, 3).replace(' ', '');
       comments.push({
         html: comment.html,
         name: name,
-        img: img
+        img: img,
+        stamp: stamp
       });
     }
 
@@ -76,7 +83,7 @@ module.exports = {
 
     var projectInfo = {
       title: data.project.title,
-      image: data.project.clips[0].assets.base.url,
+      img: data.project.clips[0].assets.base.url,
       date: monthMap[date.getMonth()] + ' ' + date.getDay() + ", " + date.getFullYear(),
       makerName: data.project.maker.nickname,
       makerAvatar: data.project.maker.avatar.icon.url,
